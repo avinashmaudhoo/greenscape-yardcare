@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GreenScape Yard Care - Contact Us</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      font-family: 'Poppins', sans-serif;
+    }
+    .overlay {
+      background: rgba(0, 0, 0, 0.65);
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+      transition: all 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    textarea:focus {
+      outline: none;
+      box-shadow: 0 0 8px rgba(34,197,94,0.7);
+      border-color: #22c55e;
+    }
+    textarea::-webkit-scrollbar {
+      width: 6px;
+    }
+    textarea::-webkit-scrollbar-thumb {
+      background-color: #22c55e;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <div class="overlay"></div>
+
+  <!-- Header -->
+  <header class="flex items-center justify-between p-6 max-w-7xl mx-auto w-full text-white">
+    <div class="flex items-center space-x-3">
+      <div class="bg-green-600 rounded-full p-3 shadow-lg">
+        <i class="fas fa-leaf text-white text-2xl"></i>
+      </div>
+      <div>
+        <h1 class="text-3xl font-extrabold tracking-wide">GreenScape</h1>
+        <p class="text-sm font-light text-green-300">Yard Care Services</p>
+      </div>
+    </div>
+    <div class="hidden md:flex space-x-6 text-green-300 font-medium">
+      <a href="tel:54755565" class="hover:text-white transition"><i class="fas fa-phone-alt mr-2"></i>54755565</a>
+      <a href="mailto:avinashmaudhoo@gmail.com" class="hover:text-white transition"><i class="fas fa-envelope mr-2"></i>avinashmaudhoo@gmail.com</a>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="flex flex-1 max-w-7xl mx-auto w-full bg-white bg-opacity-90 rounded-3xl shadow-2xl overflow-hidden">
+    
+    <!-- Left column: Form -->
+    <section class="w-full md:w-1/2 p-10 md:p-14">
+      <h2 class="text-4xl font-bold text-gray-900 mb-6 text-center md:text-left">Get in Touch</h2>
+      <p class="text-gray-600 mb-10 text-center md:text-left italic">Director: Prashant Maudhoo</p>
+      
+      <form id="contactForm" action="https://formspree.io/f/mkgbwaje" method="POST" class="space-y-6" novalidate>
+        
+        <div>
+          <label for="name" class="block mb-2 font-semibold text-gray-700">Full Name</label>
+          <div class="relative">
+            <input type="text" id="name" name="name" required
+                   class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 focus:ring-0 focus:border-green-500" placeholder="Your full name" />
+            <i class="fas fa-user absolute left-3 top-3.5 text-gray-400"></i>
+          </div>
+        </div>
+        
+        <div>
+          <label for="address" class="block mb-2 font-semibold text-gray-700">Address</label>
+          <div class="relative">
+            <input type="text" id="address" name="address" required
+                   class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 focus:ring-0 focus:border-green-500" placeholder="Your address" />
+            <i class="fas fa-map-marker-alt absolute left-3 top-3.5 text-gray-400"></i>
+          </div>
+        </div>
+        
+        <div>
+          <label for="phone" class="block mb-2 font-semibold text-gray-700">Phone Number</label>
+          <div class="relative">
+            <input type="tel" id="phone" name="phone" required
+                   class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 focus:ring-0 focus:border-green-500" placeholder="Your phone number" />
+            <i class="fas fa-phone-alt absolute left-3 top-3.5 text-gray-400"></i>
+          </div>
+        </div>
+        
+        <div>
+          <label for="email" class="block mb-2 font-semibold text-gray-700">Email Address</label>
+          <div class="relative">
+            <input type="email" id="email" name="_replyto" required
+                   class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 focus:ring-0 focus:border-green-500" placeholder="Your email address" />
+            <i class="fas fa-envelope absolute left-3 top-3.5 text-gray-400"></i>
+          </div>
+        </div>
+        
+        <div>
+          <label for="service" class="block mb-2 font-semibold text-gray-700">Service Details</label>
+          <textarea id="service" name="service" rows="4" placeholder="Describe the service you need..."
+                    required
+                    class="w-full px-4 py-3 rounded-xl border border-gray-300 resize-none focus:ring-0 focus:border-green-500"></textarea>
+        </div>
+        
+        <button type="submit"
+                class="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-4 rounded-xl shadow-lg transition flex items-center justify-center gap-3">
+          <i class="fas fa-paper-plane"></i> Send Request
+        </button>
+      </form>
+
+      <div id="successMessage" class="hidden mt-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg text-center font-semibold">
+        Thanks for contacting us! We will get back to you shortly.
+      </div>
+      <div id="errorMessage" class="hidden mt-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg text-center font-semibold">
+        Oops! Something went wrong. Please try again later.
+      </div>
+    </section>
+
+    <!-- Right column: Info & image -->
+    <aside class="hidden md:flex w-1/2 bg-green-700 bg-opacity-90 text-white flex-col justify-center items-center p-14 rounded-r-3xl relative overflow-hidden">
+      <div class="mb-6 text-center">
+        <h3 class="text-3xl font-extrabold mb-3">Why Choose GreenScape?</h3>
+        <p class="text-lg max-w-md mx-auto leading-relaxed">
+          We provide expert yard cleaning services with care and dedication. Our team ensures your outdoor space stays fresh, beautiful, and inviting all year round.
+        </p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=600&q=80" alt="Lush yard" class="rounded-2xl shadow-lg max-w-full" />
+      
+      <div class="absolute bottom-0 right-0 opacity-20">
+        <i class="fas fa-leaf fa-10x"></i>
+      </div>
+    </aside>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center p-6 mt-10">
+    <p>© 2025 GreenScape Yard Care. All rights reserved.</p>
+    <div class="mt-2 flex justify-center space-x-6 text-green-500">
+      <a href="#" aria-label="Facebook" class="hover:text-green-400 transition"><i class="fab fa-facebook fa-lg"></i></a>
+      <a href="#" aria-label="Twitter" class="hover:text-green-400 transition"><i class="fab fa-twitter fa-lg"></i></a>
+      <a href="#" aria-label="Instagram" class="hover:text-green-400 transition"><i class="fab fa-instagram fa-lg"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    const errorMessage = document.getElementById('errorMessage');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      successMessage.classList.add('hidden');
+      errorMessage.classList.add('hidden');
+
+      const formData = new FormData(form);
+
+      try {
+        const response = await fetch(form.action, {
+          method: form.method,
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+        if (response.ok) {
+          form.reset();
+          successMessage.classList.remove('hidden');
+        } else {
+          const data = await response.json();
+          if (data.errors) {
+            errorMessage.textContent = data.errors.map(err => err.message).join(", ");
+          }
+          errorMessage.classList.remove('hidden');
+        }
+      } catch (error) {
+        errorMessage.textContent = 'Oops! Something went wrong. Please try again later.';
+        errorMessage.classList.remove('hidden');
+      }
+    });
+  </script>
+
+</body>
+</html>
